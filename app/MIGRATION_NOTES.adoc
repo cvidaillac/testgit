@@ -1,0 +1,20 @@
+== Migration notes (June 26, 2024 at 10:41:03 AM EDT)
+
+=== Additions
+
+* Bonita Admin Application has been added in the project extensions.
+
+=== Updates
+
+* The project layout has been changed in favor of a multi modules maven project. It means that files location inside the project have changed.  It is a technical change and will not impact the design usage in Bonita Studio.New maven modules and their respective `pom.xml` files are *reserved for internal Studio use*.
+* `app\.gitignore` file has been updated.
+* This project now depends on the Bonita project parent pom. This parent pom configures all the required plugins and dependencies versions for a given Bonita version.
+* Rest API Extensions and Themes projects have been moved in the project layout to benefit from the Maven multi module approach. It means that files location inside the project have changed.  It is a technical change and will not impact the design usage in Bonita Studio.New maven modules and their respective `pom.xml` files are *reserved for internal Studio use*.
+* Project's extensions are now build in their own maven module. While it does not impact the design usage, this internal change allow the usage of a standard Maven build lifecycle.  All extensions share the same `version` and `groupId` of the parent project. It is enforced by the format of the Bonita project and must not be changed.
+* Application module build configuration has been updated to support Maven build.
+* `default_profile.xml` profile xml schema version has been updated.
+
+=== Removals
+
+* Deprecated provided groovy classes `BonitaUsers`, `BonitaSql`, `BonitaXML` and `BonitaTypes` have been removed.
+
